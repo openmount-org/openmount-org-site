@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPEN-MOUNT.ORG</title>
+    <style>
+        /* Estilos base para el look de terminal */
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            overflow: hidden; /* Evita barras de desplazamiento */
+        }
+
+        /* Línea de escaneo animada */
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 255, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        /* Configuración de los renglones */
+        .line-1 {
+            font-size: 5rem; 
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px #00FF00;
+        }
+
+        .line-2, .line-3 {
+            font-size: 3rem; 
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #00FF00;
+        }
+
+        .line-4 {
+            font-size: 2rem; /* Aumentado 2 veces el tamaño base */
+            margin-top: 2rem;
+            color: #00FF00;
+            text-shadow: 0 0 5px #00FF00;
+        }
+
+        /* Cursor parpadeante */
+        .cursor {
+            display: inline-block;
+            width: 15px;
+            height: 25px;
+            background-color: #00FF00;
+            animation: blink 0.8s infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Ajuste para pantallas pequeñas (móviles) */
+        @media (max-width: 600px) {
+            .line-1 { font-size: 2.5rem; }
+            .line-2, .line-3 { font-size: 1.5rem; }
+            .line-4 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+
+    <div class="line-1">open-mount.org</div>
+    <div class="line-2">montura para telescopio de codigo abierto</div>
+    <div class="line-3">la montura de todos</div>
+    <div class="line-4">en construccion...<span class="cursor"></span></div>
+</body>
+</html>
